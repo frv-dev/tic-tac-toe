@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://b274wjghgkvnc"]
+
+[ext_resource type="Script" path="res://src/components/board_button/board_button.gd" id="1_go7ny"]
+[ext_resource type="Texture2D" uid="uid://f586dc55jl1t" path="res://assets/sprites/invisible_button/invisible_button.png" id="2_btrvp"]
+[ext_resource type="PackedScene" uid="uid://cklcm2bulu31y" path="res://src/components/circle/circle.tscn" id="3_ohai4"]
+[ext_resource type="PackedScene" uid="uid://clddv50taw6sy" path="res://src/components/cross/cross.tscn" id="3_yrbw3"]
+
+[node name="BoardButton" type="Node2D"]
+script = ExtResource("1_go7ny")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0)
+scale = Vector2(4, 4)
+texture_normal = ExtResource("2_btrvp")
+
+[node name="Cross" parent="." instance=ExtResource("3_yrbw3")]
+visible = false
+position = Vector2(4, 4)
+
+[node name="Circle" parent="." instance=ExtResource("3_ohai4")]
+visible = false
+position = Vector2(4, 4)
+
+[connection signal="pressed" from="TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]

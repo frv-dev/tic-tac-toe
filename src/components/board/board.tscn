@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfm42bfxqvk7v"]
+
+[ext_resource type="Texture2D" uid="uid://ckbrrk4j8j61w" path="res://assets/sprites/board/board.png" id="1_p2awq"]
+[ext_resource type="PackedScene" uid="uid://b274wjghgkvnc" path="res://src/components/board_button/board_button.tscn" id="2_2haxn"]
+
+[node name="Board" type="Node2D"]
+
+[node name="BoardLines" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("1_p2awq")
+
+[node name="BoardButtons" type="Node2D" parent="."]
+position = Vector2(-110, -110)
+metadata/_edit_group_ = true
+
+[node name="BoardButtonTL" parent="BoardButtons" instance=ExtResource("2_2haxn")]
+
+[node name="BoardButtonTC" parent="BoardButtons" instance=ExtResource("2_2haxn")]
+position = Vector2(76, 0)
+boardPosition = 1
+
+[node name="BoardButtonTR" parent="BoardButtons" instance=ExtResource("2_2haxn")]
+position = Vector2(152, 0)
+boardPosition = 2
+
+[node name="BoardButtonCL" parent="BoardButtons" instance=ExtResource("2_2haxn")]
+position = Vector2(0, 76)
+boardPosition = 3
+
+[node name="BoardButtonCC" parent="BoardButtons" instance=ExtResource("2_2haxn")]
+position = Vector2(76, 76)
+boardPosition = 4
+
+[node name="BoardButtonCR" parent="BoardButtons" instance=ExtResource("2_2haxn")]
+position = Vector2(152, 76)
+boardPosition = 5
+
+[node name="BoardButtonBL" parent="BoardButtons" instance=ExtResource("2_2haxn")]
+position = Vector2(0, 152)
+boardPosition = 6
+
+[node name="BoardButtonBC" parent="BoardButtons" instance=ExtResource("2_2haxn")]
+position = Vector2(76, 152)
+boardPosition = 7
+
+[node name="BoardButtonBR" parent="BoardButtons" instance=ExtResource("2_2haxn")]
+position = Vector2(152, 152)
+boardPosition = 8

@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://55at7bgw32kh"]
+
+[ext_resource type="Texture2D" uid="uid://bov0p8gdo5e8c" path="res://assets/sprites/background/background.png" id="1_f2kw1"]
+[ext_resource type="Script" path="res://src/levels/board_level/board_level.gd" id="1_wtsyd"]
+[ext_resource type="PackedScene" uid="uid://cfm42bfxqvk7v" path="res://src/components/board/board.tscn" id="2_g10rr"]
+[ext_resource type="FontFile" uid="uid://hptoddmlxhoy" path="res://assets/fonts/joystix-monospace.otf" id="3_xmjhn"]
+
+[node name="BoardLevel" type="Node2D"]
+script = ExtResource("1_wtsyd")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(-45, -80)
+scale = Vector2(40, 40)
+texture = ExtResource("1_f2kw1")
+centered = false
+
+[node name="Board" parent="." instance=ExtResource("2_g10rr")]
+position = Vector2(135, 240)
+
+[node name="RestartButton" type="Button" parent="."]
+offset_left = 43.0
+offset_top = 374.0
+offset_right = 230.0
+offset_bottom = 411.0
+theme_override_fonts/font = ExtResource("3_xmjhn")
+theme_override_font_sizes/font_size = 24
+text = "REINICIAR"
+
+[node name="WinnerText" type="Label" parent="."]
+offset_left = 25.0
+offset_top = 69.0
+offset_right = 245.0
+offset_bottom = 101.0
+theme_override_fonts/font = ExtResource("3_xmjhn")
+theme_override_font_sizes/font_size = 22
+text = "GANHADOR - X"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]

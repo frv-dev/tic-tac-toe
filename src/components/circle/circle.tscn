@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cklcm2bulu31y"]
+
+[ext_resource type="Texture2D" uid="uid://cif6tqwphe8qf" path="res://assets/sprites/circle/circle.png" id="1_g0pfj"]
+
+[node name="Circle" type="Node2D"]
+
+[node name="Circle" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("1_g0pfj")
+centered = false
